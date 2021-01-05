@@ -1,0 +1,20 @@
+{
+  "name": "trend_tracker",
+  "version": "1.0.0",
+  "description": "Visualize google search trends accross the counrty by state and date",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "webpack --watch --mode=development"
+  },
+  "author": "Kevin Bastoul",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.0.1",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1"
+  }
+}
