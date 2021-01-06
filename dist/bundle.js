@@ -2,7 +2,7 @@
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-// import states from '../dataset/usa';
+// USE THESE DOCS: https://api.anychart.com/anychart.charts.Map
 anychart.onDocumentReady(function () {
   // create map
   var map = anychart.map();

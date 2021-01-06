@@ -1,4 +1,4 @@
-// import states from '../dataset/usa';
+// USE THESE DOCS: https://api.anychart.com/anychart.charts.Map
 
 anychart.onDocumentReady(() => {
   // create map
