@@ -1,0 +1,333 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://cdn.anychart.com/maps-data/US_presidential_election_2008.js"></script>
+    <script
+        src="https://cdn.anychart.com/geodata/latest/countries/united_states_of_america/united_states_of_america.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/themes/dark_glamour.min.js"></script>
+    <link href="https://cdn.anychart.com/css/gallery.css" type="text/css" rel="stylesheet">
+    <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
+    <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
+    <style type="text/css">
+        html,
+        body,
+        #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container"></div>
+
+
+    <script>
+
+        // The data that have been used for this sample can be taken from the CDN
+        // https://cdn.anychart.com/maps-data/US_presidential_election_2008.js
+        var electionData = getElectionData();
+        var electionDataByState = getElectionDataByState();
+
+        // Obama series color settings
+        var obamaColorScale = anychart.scales.linearColor(
+            '#e3f2fd',
+            '#bbdefb',
+            '#64b5f6',
+            '#0d47a1'
+        );
+        var obamaLegendItem = {
+            iconType: 'square',
+            iconFill: '#64b5f6',
+            iconStroke: null
+        };
+
+        // McCain series color settings
+        var mcCainColorScale = anychart.scales.linearColor(
+            '#fff8e1',
+            '#ffe082',
+            '#fb8c00',
+            '#bf360c'
+        );
+        var mcCainLegendItem = {
+            iconType: 'square',
+            iconFill: '#fb8c00',
+            iconStroke: null
+        };
+
+        // global settings
+        var stateBaseUrl = 'https://cdn.anychart.com/geodata/latest/usa_states/';
+
+        var preloader;
+
+        var map;
+
+        anychart.onDocumentReady(function () {
+            // set chart theme
+            anychart.theme('darkGlamour');
+            preloader = anychart.ui.preloader();
+            preloader.render(document.getElementById('container'));
+
+            // creates root map
+            map = anychart.map();
+
+            // sets geo data
+            map.geoData('anychart.maps.united_states_of_america');
+
+            // sets credits settings
+            map
+                .credits()
+                .enabled(true)
+                .url(
+                    'https://en.wikipedia.org/wiki/United_States_presidential_election,_2008'
+                )
+                .text(
+                    'Data source: https://en.wikipedia.org/wiki/United_States_presidential_election,_2008'
+                );
+
+            // sets title settings
+            map
+                .title()
+                .enabled(true)
+                .useHtml(true)
+                .padding([0, 0, 10, 0])
+                .text(
+                    'United States presidential election, 2008<br/><span style="color:#212121; font-size: 13px;">' +
+                    'According to wikipedia.com <br> To drill up Press Backspace button or use context menu</span>'
+                );
+
+            // sets map padding and interactivity settings
+            map.padding([10, 10, 10, 10]);
+            map.interactivity().selectionMode('none');
+
+            var menu = map.contextMenu();
+            // add item DrillUp for context menu
+            menu.itemsFormatter(function (items) {
+                var path = map.getDrilldownPath();
+
+                items['drill-up'] = {
+                    index: 0,
+                    text: 'Drill Up',
+                    action: function () {
+                        map.drillUp();
+                    }
+                };
+
+                items['drill-up'].enabled = path.length > 1;
+
+                return items;
+            });
+
+            // set map legend settings
+            map
+                .legend()
+                .enabled(true)
+                .position('center-top')
+                .padding([0, 0, 20, 0]);
+
+            // create choropleth series based on Obama data
+            var obamaSeries = createSeries(
+                map,
+                'Barack Obama',
+                { value: 'Obama' },
+                filterFunction(electionData, 'Obama', 'McCain')
+            );
+            obamaSeries.colorScale(obamaColorScale).legendItem(obamaLegendItem);
+
+            // create choropleth series based on McCain data
+            var mcCainSeries = createSeries(
+                map,
+                'John McCain',
+                { value: 'McCain' },
+                filterFunction(electionData, 'McCain', 'Obama')
+            );
+            mcCainSeries.colorScale(mcCainColorScale).legendItem(mcCainLegendItem);
+
+            map
+                .tooltip()
+                .titleFormat(tooltipTitleFormatter)
+                .format(tooltipTextFormatter);
+
+            // set pointClick event listener
+            map.listen('pointClick', onPointClickHandler);
+
+            // set container id for the map
+            map.container('container');
+
+            // initiate map drawing
+            map.draw();
+        });
+
+        function onPointClickHandler(evt) {
+            // get point data from event
+            var point = evt.point;
+
+            // get state data using data from the point
+            var stateId = point.get('id');
+            var state = point.get('state');
+
+            if (typeof state === 'undefined') return;
+
+            var stateNormalized = state.toLowerCase().replace(' ', '_');
+            var stateUrl =
+                stateBaseUrl + stateNormalized + '/' + stateNormalized + '.json';
+
+            // The data that have been used for this sample can be taken from the CDN
+            // https://cdn.anychart.com/maps-data/US_presidential_election_2008.js
+            var stateData = electionDataByState[stateId];
+            var obamaStateData = filterFunction(stateData, 'Obama', 'McCain');
+            var mcCainStateData = filterFunction(stateData, 'McCain', 'Obama');
+
+            // load state Geo data in JSON format from AnyChart CDN using jQuery
+            $.ajax({
+                type: 'GET',
+                url: stateUrl,
+                dataType: 'json',
+                beforeSend: function () {
+                    // set timeout to prevent preloader in case of browser cached geo data
+                    preloader.visible(true);
+                },
+                success: function (geoData) {
+                    // create map fro drill down
+                    var drillMap = anychart.map();
+                    drillMap.geoIdField('fips');
+
+                    // set drill down map title setting
+                    var noDataText = stateData ? '' : ' - <b>No Data</b>';
+
+                    drillMap
+                        .title()
+                        .enabled(true)
+                        .useHtml(true)
+                        .padding([0, 0, 10, 0])
+                        .text(
+                            'United States presidential election, 2008<br/>' +
+                            '<span style="color:#212121; font-size: 13px;">In ' +
+                            state +
+                            ' by county' +
+                            noDataText +
+                            '<br> ' +
+                            'To drill up Press Backspace button or use context menu</span>'
+                        );
+
+                    // set drill down map Geo Data settings
+                    drillMap
+                        .geoData(geoData)
+                        // set drill down map padding settings
+                        .padding([10, 10, 10, 10]);
+
+                    // create choropleth series based on Obama data
+                    var obamaSeries = createSeries(
+                        drillMap,
+                        'Barack Obama',
+                        { id: 'fips', value: 'Obama' },
+                        obamaStateData
+                    );
+                    obamaSeries.colorScale(obamaColorScale).legendItem(obamaLegendItem);
+
+                    // create choropleth series based on McCain data
+                    var mcCainSeries = createSeries(
+                        drillMap,
+                        'John McCain',
+                        { id: 'fips', value: 'McCain' },
+                        mcCainStateData
+                    );
+                    mcCainSeries
+                        .colorScale(mcCainColorScale)
+                        .legendItem(mcCainLegendItem);
+
+                    drillMap
+                        .tooltip()
+                        .titleFormat(tooltipTitleFormatter)
+                        .format(tooltipTextFormatter);
+
+                    // initiate drill down
+                    map.drillTo(stateId, drillMap);
+
+                    // hide preloader
+                    preloader.visible(false);
+                },
+                error: function (data) {
+                    console.log('Error: ', data);
+                }
+            });
+        }
+
+        /**
+         * Create choropleth series and set common settings.
+         */
+        function createSeries(targetMap, seriesName, mapping, data) {
+            // create data set with passed data
+            var dataSet = anychart.data.set(data);
+
+            // create data mapping with passed settings
+            var seriesMapping = dataSet.mapAs(mapping);
+
+            // create choropleth series
+            var series = targetMap.choropleth(seriesMapping);
+
+            // sets common settings
+            series.name(seriesName).stroke('1.5 #fff').labels(false);
+
+            // sets tooltip settings
+            series.tooltip().useHtml(true).padding([8, 13, 10, 13]).fontSize(13);
+
+            return series;
+        }
+
+        /**
+         * Text formatting function for main map tooltip title.
+         */
+        function tooltipTitleFormatter() {
+            return this.state || this.getData('state');
+        }
+
+        /**
+         * Text formatting function for main map tooltip text.
+         */
+        function tooltipTextFormatter() {
+            var stateID = this.getData('id');
+            var notice = !electionDataByState[stateID]
+                ? '<br/><br/><span style="font-size: 11px; color: #cbcbcb">No data by counties for the state</span>'
+                : '<br/><br/><span style="font-size: 11px; color: #fafafa">Click to see results by counties</span>';
+
+            return (
+                '<span style="font-size: 12px; color: #cbcbcb">Barack Obama:</span> ' +
+                this.getData('Obama') +
+                '<span style="font-size: 12px; color: #cbcbcb">%</span><br/>' +
+                '<span style="font-size: 12px; color: #cbcbcb">John McCain:</span> ' +
+                this.getData('McCain') +
+                '<span style="font-size: 12px; color: #cbcbcb">%</span>' +
+                notice
+            );
+        }
+
+        /**
+         * @param {Array} data
+         * @param {string} field1
+         * @param {string} field2
+         * @returns {Array}
+         */
+        function filterFunction(data, field1, field2) {
+            var result = [];
+            if (data) {
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i][field1] >= data[i][field2]) result.push(data[i]);
+                }
+            }
+            return result;
+        }
+
+    </script>
+</body>
+
+</html>
