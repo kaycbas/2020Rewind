@@ -1,11 +1,10 @@
+// import states from '../dataset/usa';
+
 anychart.onDocumentReady(() => {
   // create map
   var map = anychart.map();
 
-
-  // create data set
-  var dataSet = anychart.data.set(
-    [
+  let states = [
         {"id":"US.MA","value":0},
         {"id":"US.MN","value":1},
         {"id":"US.MT","value":2},
@@ -14,7 +13,7 @@ anychart.onDocumentReady(() => {
         {"id":"US.ID","value":5},
         {"id":"US.WA","value":6},
         {"id":"US.AZ","value":7},
-        {"id":"US.CA", "name": "CALI", "value":8},
+        {"id":"US.CA","value":8},
         {"id":"US.CO","value":9},
         {"id":"US.NV","value":10},
         {"id":"US.NM","value":11},
@@ -57,8 +56,12 @@ anychart.onDocumentReady(() => {
         {"id":"US.MI","value":48},
         {"id":"US.AK","value":49},
         {"id":"US.DC","value":50}
-    ]
-  );
+    ];
+
+//   console.log(States);
+  // create data set
+//   var dataSet = anychart.data.set(States);
+  var dataSet = anychart.data.set(states);
 
   // create choropleth series
   series = map.choropleth(dataSet);
@@ -95,4 +98,25 @@ anychart.onDocumentReady(() => {
 
   //initiate map drawing
   map.draw();
+
+    // -- SAVE THESE BAD BOYS --
+    // THESE TWO RIGHT HERE
+    // dataSet.data([{"id":"US.CA", "name":"KB", "value":8}])
+    // dataSet.row(8, {"id":"US.CA", "name":"KB", "value":8})
+    // AND THESE (FOR EASIER MANIPULATION)
+    let view = dataSet.mapAs();
+    // view.set(8, 'name', 'neighh');
+    // AND THIS (!!!)
+    let idx = view.find('id', 'US.CA')
+    view.set(idx, 'name', 'niiice');
+    view.set(idx, 'fill', '#009688');
+
+  map.draw();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    console.log('loaded!');
+    let button = document.querySelector('.btn').addEventListener('click', () => {
+        map.removeSeriesAt(0);
+    })
+})

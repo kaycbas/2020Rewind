@@ -2,11 +2,11 @@
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
+// import states from '../dataset/usa';
 anychart.onDocumentReady(function () {
   // create map
-  var map = anychart.map(); // create data set
-
-  var dataSet = anychart.data.set([{
+  var map = anychart.map();
+  var states = [{
     "id": "US.MA",
     "value": 0
   }, {
@@ -32,7 +32,6 @@ anychart.onDocumentReady(function () {
     "value": 7
   }, {
     "id": "US.CA",
-    "name": "CALI",
     "value": 8
   }, {
     "id": "US.CO",
@@ -160,7 +159,11 @@ anychart.onDocumentReady(function () {
   }, {
     "id": "US.DC",
     "value": 50
-  }]); // create choropleth series
+  }]; //   console.log(States);
+  // create data set
+  //   var dataSet = anychart.data.set(States);
+
+  var dataSet = anychart.data.set(states); // create choropleth series
 
   series = map.choropleth(dataSet); // enable labels
 
@@ -186,7 +189,25 @@ anychart.onDocumentReady(function () {
 
   map.container('container'); //initiate map drawing
 
+  map.draw(); // -- SAVE THESE BAD BOYS --
+  // THESE TWO RIGHT HERE
+  // dataSet.data([{"id":"US.CA", "name":"KB", "value":8}])
+  // dataSet.row(8, {"id":"US.CA", "name":"KB", "value":8})
+  // AND THESE (FOR EASIER MANIPULATION)
+
+  var view = dataSet.mapAs(); // view.set(8, 'name', 'neighh');
+  // AND THIS (!!!)
+
+  var idx = view.find('id', 'US.CA');
+  view.set(idx, 'name', 'niiice');
+  view.set(idx, 'fill', '#009688');
   map.draw();
+});
+document.addEventListener("DOMContentLoaded", function () {
+  console.log('loaded!');
+  var button = document.querySelector('.btn').addEventListener('click', function () {
+    map.removeSeriesAt(0);
+  });
 });
 /******/ })()
 ;
