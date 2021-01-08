@@ -1,2 +1,4 @@
 /node_modules
+/data_fetcher/node_modules
+/data_fetcher/data/**
 .DS_Store

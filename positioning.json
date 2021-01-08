@@ -1,0 +1,419 @@
+{
+    "US.MA": {
+        "label": {
+            "x": 1,
+            "y": -0.1,
+            "positionMode": "relative"
+        }
+    },
+    "US.MN": {
+        "middle-y": 0.4,
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.MT": {
+        "label": {
+            "minFontSize": "16",
+            "width": "140",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.ND": {
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.HI": {
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.ID": {
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.WA": {
+        "label": {
+            "minFontSize": "16",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.AZ": {
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.CA": {
+        "label": {
+            "minFontSize": "16",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.CO": {
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.NV": {
+        "label": {
+            "minFontSize": "16",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.NM": {
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.OR": {
+        "label": {
+            "minFontSize": "16",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.UT": {
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.AR": {
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.IA": {
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.KS": {
+        "middle-x": 0.5,
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.MO": {
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.NE": {
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.OK": {
+        "middle-x": 0.6,
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.SD": {
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.LA": {
+        "middle-y": 0.7,
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.TX": {
+        "middle-x": 0.6,
+        "label": {
+            "minFontSize": "16",
+            "width": "150",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.CT": {
+        "label": {
+            "x": 1.3,
+            "y": 0.8,
+            "positionMode": "relative"
+        }
+    },
+    "US.NH": {
+        "label": {
+            "x": -1.5,
+            "y": -0.6,
+            "positionMode": "relative"
+        }
+    },
+    "US.RI": {
+        "label": {
+            "x": 3.5,
+            "y": -0.2,
+            "positionMode": "relative"
+        }
+    },
+    "US.VT": {
+        "label": {
+            "x": -1,
+            "y": -0.1,
+            "positionMode": "relative"
+        }
+    },
+    "US.AL": {
+        "middle-y": "0.4",
+        "label": {
+            "minFontSize": "14",
+            "width": "100",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.FL": {
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.GA": {
+        "middle-x": "0.6",
+        "middle-y": "0.7",
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.MS": {
+        "label": {
+            "fontSize": "14",
+            "minFontSize": "12",
+            "width": "100",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.SC": {
+        "middle-y": 0.5,
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.IL": {
+        "middle-y": 0.6,
+        "label": {
+            "minFontSize": "12",
+            "width": "100",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.IN": {
+        "label": {
+            "minFontSize": "12",
+            "width": "100",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.KY": {
+        "middle-y": 0.7,
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.NC": {
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.OH": {
+        "label": {
+            "minFontSize": "12",
+            "width": "100",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.TN": {
+        "middle-y": 0.7,
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.VA": {
+        "middle-y": 0.7,
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.WI": {
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.WV": {
+        "middle-x": 0.4,
+        "middle-y": 0.6,
+        "label": {
+            "minFontSize": "10",
+            "width": "100",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.MD": {
+        "label": {
+            "x": 1.3,
+            "y": 1,
+            "positionMode": "relative"
+        }
+    },
+    "US.NJ": {
+        "label": {
+            "x": 2,
+            "y": 0.5,
+            "positionMode": "relative"
+        }
+    },
+    "US.NY": {
+        "middle-x": 0.5,
+        "middle-y": 0.6,
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.PA": {
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.ME": {
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.MI": {
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.AK": {
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.DC": {
+        "label": {
+            "x": 14,
+            "y": 8,
+            "positionMode": "relative"
+        }
+    },
+    "US.WY": {
+        "label": {
+            "minFontSize": "14",
+            "width": "110",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    },
+    "US.DE": {
+        "label": {
+            "x": 1.3,
+            "y": 0.6,
+            "positionMode": "relative"
+        }
+    }
+}

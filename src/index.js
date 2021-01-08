@@ -1,67 +1,21 @@
+const {
+  daysOfYear
+} = require('./util');
+
 // USE THESE DOCS: https://api.anychart.com/anychart.charts.Map
 
 anychart.onDocumentReady(() => {
+
   // create map
-  var map = anychart.map();
+  let map = anychart.map();
+  // map.title('2020 in Search')
 
-  let states = [
-        {"id":"US.MA","value":0},
-        {"id":"US.MN","value":1},
-        {"id":"US.MT","value":2},
-        {"id":"US.ND","value":3},
-        {"id":"US.HI","value":4},
-        {"id":"US.ID","value":5},
-        {"id":"US.WA","value":6},
-        {"id":"US.AZ","value":7},
-        {"id":"US.CA","value":8},
-        {"id":"US.CO","value":9},
-        {"id":"US.NV","value":10},
-        {"id":"US.NM","value":11},
-        {"id":"US.OR","value":12},
-        {"id":"US.UT","value":13},
-        {"id":"US.WY","value":14},
-        {"id":"US.AR","value":15},
-        {"id":"US.IA","value":16},
-        {"id":"US.KS","value":17},
-        {"id":"US.MO","value":18},
-        {"id":"US.NE","value":19},
-        {"id":"US.OK","value":20},
-        {"id":"US.SD","value":21},
-        {"id":"US.LA","value":22},
-        {"id":"US.TX","value":23},
-        {"id":"US.CT","value":24},
-        {"id":"US.NH","value":25},
-        {"id":"US.RI","value":26},
-        {"id":"US.VT","value":27},
-        {"id":"US.AL","value":28},
-        {"id":"US.FL","value":29},
-        {"id":"US.GA","value":30},
-        {"id":"US.MS","value":31},
-        {"id":"US.SC","value":32},
-        {"id":"US.IL","value":33},
-        {"id":"US.IN","value":34},
-        {"id":"US.KY","value":35},
-        {"id":"US.NC","value":36},
-        {"id":"US.OH","value":37},
-        {"id":"US.TN","value":38},
-        {"id":"US.VA","value":39},
-        {"id":"US.WI","value":40},
-        {"id":"US.WV","value":41},
-        {"id":"US.DE","value":42},
-        {"id":"US.MD","value":43},
-        {"id":"US.NJ","value":44},
-        {"id":"US.NY","value":45},
-        {"id":"US.PA","value":46},
-        {"id":"US.ME","value":47},
-        {"id":"US.MI","value":48},
-        {"id":"US.AK","value":49},
-        {"id":"US.DC","value":50}
-    ];
+  let allData = require('../dataset/all_us_trends_2020.json');
+  let states = allData["2020-1-1"];
+  // let states = require('../temp.json');
 
-//   console.log(States);
   // create data set
-//   var dataSet = anychart.data.set(States);
-  var dataSet = anychart.data.set(states);
+  let dataSet = anychart.data.set(states);
 
   // create choropleth series
   series = map.choropleth(dataSet);
@@ -73,10 +27,15 @@ anychart.onDocumentReady(() => {
   // labels setting
   labels.fontColor('white');
   labels.fontSize("14px");
+  labels.fontWeight('bold');
   labels.offsetY(-10);
+  labels.connectorStroke({ color: '#DCDCDC' , thickness: 2 });
+  labels.padding(6);
+  labels.hAlign('center')
 
   // set the overlapping mode
-  map.overlapMode(false);
+  map.overlapMode(true);
+  // map.overlapMode("no-overlap");
 
   // set geoIdField to 'id', this field contains in geo data meta properties
   series.geoIdField('id');
@@ -86,11 +45,22 @@ anychart.onDocumentReady(() => {
   series.stroke("#1b262c");
 
   // set map color settings
-  series.colorScale(anychart.scales.linearColor('#0f4c75', '#bbe1fa'));
-  series.hovered().fill('#eaeaea');
+  // series.colorScale(anychart.scales.linearColor('#0f4c75', '#bbe1fa'));
+  series.colorScale(anychart.scales.ordinalColor([
+    {from:0, to:9, color: '#F94144'},
+    {from:10, to:19, color: '#F3722C'},
+    {from:20, to:29, color: '#F8961E'},
+    {from:30, to:39, color: '#F9844A'},
+    {from:40, to:49, color: '#F9C74F'},
+    {from:50, to:59, color: '#90BE6D'},
+    {from:60, to:69, color: '#43AA8B'},
+    {from:70, to:79, color: '#4D908E'},
+    {from:80, to:89, color: '#577590'},
+    {from:90, to:100, color: '#277DA1'},
+  ]));
+  series.hovered().fill('#577590');
 
   // set geo data, you can find this map in our geo maps collection
-  // https://cdn.anychart.com/#maps-collection
   map.geoData(anychart.maps['united_states_of_america']);
 
   //set map container id (div)
@@ -99,24 +69,72 @@ anychart.onDocumentReady(() => {
   //initiate map drawing
   map.draw();
 
-    // -- SAVE THESE BAD BOYS --
-    // THESE TWO RIGHT HERE
-    // dataSet.data([{"id":"US.CA", "name":"KB", "value":8}])
-    // dataSet.row(8, {"id":"US.CA", "name":"KB", "value":8})
-    // AND THESE (FOR EASIER MANIPULATION)
-    let view = dataSet.mapAs();
-    // view.set(8, 'name', 'neighh');
-    // AND THIS (!!!)
-    let idx = view.find('id', 'US.CA')
-    view.set(idx, 'name', 'niiice');
-    view.set(idx, 'fill', '#009688');
-
-  map.draw();
+  addEventListeners(allData, dataSet);
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    console.log('loaded!');
-    let button = document.querySelector('.btn').addEventListener('click', () => {
-        map.removeSeriesAt(0);
-    })
-})
+const getMonthDayStr = (date) => {
+  let month = date.toLocaleString('default', { month: 'short' });
+  let day = date.getUTCDate();
+  return month.concat(' ', day, ', ');
+}
+
+const addEventListeners = (allData, dataSet) => {
+  let slider = document.getElementById("myRange");
+  let playButton = document.querySelector('.play-button');
+  let monthDayLabel = document.querySelector('.month-day');
+  let yearLabel = document.querySelector('.year');
+  let date = new Date(daysOfYear[0]);
+  
+  monthDayLabel.innerHTML = getMonthDayStr(date);
+  yearLabel.innerHTML = date.getFullYear();
+
+  const updateState = () => {
+    dataSet.data(allData[daysOfYear[slider.value]])
+    // anychart.data.set(allData[daysOfYear[slider.value]])
+
+    let date = new Date(daysOfYear[slider.value]);
+    monthDayLabel.innerHTML = getMonthDayStr(date); 
+    yearLabel.innerHTML = date.getFullYear();
+  }
+
+  slider.oninput = function() {
+    updateState();
+  }
+
+  let playInterval;
+  playButton.addEventListener('click', () => {
+    const play = () => {
+      if (slider.value < 365) {
+        let val = Number(slider.value);
+        slider.value = val + 1;
+        console.log(typeof slider.value)
+        console.log(slider.value);
+        updateState();
+      }
+    }
+    if (playButton.innerHTML === '▶️') {
+      play();
+      playInterval = setInterval(() => play(), 500);
+      playButton.innerHTML = '⏸'
+    } else {
+      clearInterval(playInterval);
+      playButton.innerHTML = '▶️'
+    }
+  })
+
+}
+
+
+ // -- SAVE THESE BAD BOYS --
+// setTimeout(() => {
+//   dataSet.data(states2)
+// }, 5000);
+// dataSet.data([{"id":"US.CA", "name":"KB", "value":8}])
+// dataSet.row(8, {"id":"US.CA", "name":"KB", "value":8})
+// AND THESE (FOR EASIER MANIPULATION)
+// let view = dataSet.mapAs();
+// view.set(8, 'name', 'neighh');
+// AND THIS (!!!)
+// let idx = view.find('id', 'US.CA')
+// view.set(idx, 'name', 'niiice');
+// view.set(idx, 'fill', '#009688');

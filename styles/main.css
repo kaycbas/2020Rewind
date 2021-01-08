@@ -1,3 +1,83 @@
 body {
     background-color: #1b262c;
 }
+
+.map-container {
+    /* width: 80vw; */
+    height: 80vh;
+    padding-right: 50px;
+}
+
+.map-section {
+    position: relative;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    padding: 20px;
+}
+
+.date-label {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    right: 8%;
+    bottom: 24%;
+}
+
+/* Slider */
+
+.slidecontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.play-button {
+    cursor: pointer;
+    padding-right: 10px;
+    font-size: 24px;
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;
+    width: 80%;
+    height: 12px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #4daed4;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+

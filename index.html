@@ -8,12 +8,23 @@
     
     <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-core.min.js" type="text/javascript"></script>
     <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-map.min.js" type="text/javascript"></script>
-    <!-- <script src="dataset/usa.js"></script> -->
     <script src="https://cdn.anychart.com/geodata/2.1.0/countries/united_states_of_america/united_states_of_america.js"></script>
     <script type="text/javascript" src="dist/bundle.js" charset="utf-8" defer></script>
 </head>
 <body>
-    <div id="container" style="width: 1500px; height: 1200px;"></div>
-    <button class="btn">Click me!</button>
+    <div class="title">2020 Year in Search</div>
+    <div class="map-section">
+        <div id="container" class="map-container"></div>
+        <div class="date-label">
+            <label class="month-day"></label>
+            <label class="year"></label>
+        </div>
+        <h1 id='date-label'></h1>
+    </div>
+    <div class="slidecontainer">
+        <div class="play-button">▶️</div>
+        <input type="range" min="0" max="365" value="0" class="slider" id="myRange">
+    </div>
+    <!-- <button class="btn">Click me!</button> -->
 </body>
 </html>
