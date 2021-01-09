@@ -5,14 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/main.css">
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-core.min.js" type="text/javascript"></script>
     <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-map.min.js" type="text/javascript"></script>
     <script src="https://cdn.anychart.com/geodata/2.1.0/countries/united_states_of_america/united_states_of_america.js"></script>
     <script type="text/javascript" src="dist/bundle.js" charset="utf-8" defer></script>
 </head>
 <body>
-    <div class="title">2020 Year in Search</div>
+    <div class="credits">
+        <h1>Goodluck in 2021!</h1>
+        <p>(rough start, lol)</p>
+    </div>
+    <!-- <div class="title">2020 Year in Search</div> -->
     <div class="map-section">
         <div id="container" class="map-container"></div>
         <div class="date-label">
@@ -20,11 +27,23 @@
             <label class="year"></label>
         </div>
         <h1 id='date-label'></h1>
+        <div class="trial-blocker"></div>
     </div>
-    <div class="slidecontainer">
+    <!-- <div class="slidecontainer">
         <div class="play-button">▶️</div>
         <input type="range" min="0" max="365" value="0" class="slider" id="myRange">
+    </div> -->
+    <div class="range-container">
+        <div class="play-container">
+            <input type="checkbox" id="play-pause" />
+            <label for="play-pause" id="play-pause-label" class="play-button"></label>
+        </div>
+        <div class="range-slider">
+            <input id="rs-range-line" class="rs-range" type="range" value="0" min="0" max="365">
+        </div>
     </div>
-    <!-- <button class="btn">Click me!</button> -->
+    <audio id="audio">
+        <source src="time2.mp3" type="audio/ogg">
+    </audio>
 </body>
 </html>

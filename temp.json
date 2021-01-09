@@ -1,0 +1,529 @@
+[{
+        "id": "US.MA",
+        "value": 10,
+        "name": "Pandemic",
+        "label": {
+            "x": 1,
+            "y": -0.1,
+            "fontSize": "18",
+            "positionMode": "relative"
+        }
+    }, {
+        "id": "US.MN",
+        "value": 70,
+        "name": "Black Lives Matter",
+        "middle-y": 0.4,
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.MT",
+        "value": 10,
+        "name": "Bubba Wallace",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.ND",
+        "value": 90,
+        "name": "PS5",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.HI",
+        "value": 90,
+        "name": "PS5",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.ID",
+        "value": 50,
+        "name": "George Floyd",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.WA",
+        "value": 70,
+        "name": "Black Lives Matter",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.AZ",
+        "value": 10,
+        "name": "Pandemic",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.CA",
+        "value": 10,
+        "name": "Pandemic",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.CO",
+        "value": 10,
+        "name": "Pandemic",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.NV",
+        "value": 10,
+        "name": "Pandemic",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.NM",
+        "value": 90,
+        "name": "PS5",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.OR",
+        "value": 50,
+        "name": "George Floyd",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.UT",
+        "value": 90,
+        "name": "PS5",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.AR",
+        "value": 50,
+        "name": "George Floyd",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.IA",
+        "value": 50,
+        "name": "George Floyd",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.KS",
+        "value": 50,
+        "name": "George Floyd",
+        "middle-x": 0.5,
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.MO",
+        "value": 50,
+        "name": "George Floyd",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.NE",
+        "value": 50,
+        "name": "George Floyd",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.OK",
+        "value": 10,
+        "name": "Pandemic",
+        "middle-x": 0.6,
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.SD",
+        "value": 50,
+        "name": "George Floyd",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.LA",
+        "value": 70,
+        "name": "Black Lives Matter",
+        "middle-y": 0.7,
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.TX",
+        "value": 90,
+        "name": "PS5",
+        "middle-x": 0.6,
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.CT",
+        "value": 70,
+        "name": "Black Lives Matter",
+        "label": {
+            "x": 1.3,
+            "y": 0.8,
+            "fontSize": "18",
+            "positionMode": "relative"
+        }
+    }, {
+        "id": "US.NH",
+        "value": 10,
+        "name": "Pandemic",
+        "label": {
+            "x": -1.5,
+            "y": -0.6,
+            "fontSize": "18",
+            "positionMode": "relative"
+        }
+    }, {
+        "id": "US.RI",
+        "value": 50,
+        "name": "George Floyd",
+        "label": {
+            "x": 3.5,
+            "y": -0.2,
+            "fontSize": "18",
+            "positionMode": "relative"
+        }
+    }, {
+        "id": "US.VT",
+        "value": 70,
+        "name": "Black Lives Matter",
+        "label": {
+            "x": -1,
+            "y": -0.1,
+            "fontSize": "18",
+            "positionMode": "relative"
+        }
+    }, {
+        "id": "US.AL",
+        "value": 70,
+        "name": "Black Lives Matter",
+        "middle-y": "0.4",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.FL",
+        "value": 70,
+        "name": "Black Lives Matter",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.GA",
+        "value": 70,
+        "name": "Black Lives Matter",
+        "middle-x": "0.6",
+        "middle-y": "0.7",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.MS",
+        "value": 10,
+        "name": "Pandemic",
+        "label": {
+            "fontSize": "14",
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.SC",
+        "value": 10,
+        "name": "Bubba Wallace",
+        "middle-y": 0.5,
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.IL",
+        "value": 90,
+        "name": "PS5",
+        "middle-y": 0.6,
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.IN",
+        "value": 70,
+        "name": "Black Lives Matter",
+        "label": {
+            "minFontSize": "14",
+            "width": "90",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.KY",
+        "value": 70,
+        "name": "Black Lives Matter",
+        "middle-y": 0.7,
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.NC",
+        "value": 90,
+        "name": "PS5",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.OH",
+        "value": 70,
+        "name": "Black Lives Matter",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.TN",
+        "value": 10,
+        "name": "Bubba Wallace",
+        "middle-y": 0.7,
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.VA",
+        "value": 10,
+        "name": "Pandemic",
+        "middle-y": 0.7,
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.WI",
+        "value": 90,
+        "name": "PS5",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.WV",
+        "value": 10,
+        "name": "Bubba Wallace",
+        "middle-x": 0.4,
+        "middle-y": 0.6,
+        "label": {
+            "minFontSize": "14",
+            "width": "90",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.MD",
+        "value": 10,
+        "name": "Pandemic",
+        "label": {
+            "x": 1.3,
+            "y": 1,
+            "fontSize": "18",
+            "positionMode": "relative"
+        }
+    }, {
+        "id": "US.NJ",
+        "value": 10,
+        "name": "Pandemic",
+        "label": {
+            "x": 2,
+            "y": 0.5,
+            "fontSize": "18",
+            "positionMode": "relative"
+        }
+    }, {
+        "id": "US.NY",
+        "value": 10,
+        "name": "Pandemic",
+        "middle-x": 0.5,
+        "middle-y": 0.6,
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.PA",
+        "value": 10,
+        "name": "Pandemic",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.ME",
+        "value": 10,
+        "name": "Bubba Wallace",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.MI",
+        "value": 70,
+        "name": "Black Lives Matter",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.AK",
+        "value": 90,
+        "name": "PS5",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.DC",
+        "value": 70,
+        "name": "Black Lives Matter",
+        "label": {
+            "x": 14,
+            "y": 8,
+            "fontSize": "18",
+            "positionMode": "relative"
+        }
+    }, {
+        "id": "US.WY",
+        "value": 50,
+        "name": "George Floyd",
+        "label": {
+            "minFontSize": "18",
+            "width": "125",
+            "wordWrap": "break-word",
+            "vAlign": "middle"
+        }
+    }, {
+        "id": "US.DE",
+        "value": 70,
+        "name": "Black Lives Matter",
+        "label": {
+            "x": 1.3,
+            "y": 0.6,
+            "fontSize": "18",
+            "positionMode": "relative"
+        }
+    }]

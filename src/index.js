@@ -27,6 +27,7 @@ anychart.onDocumentReady(() => {
   // labels setting
   labels.fontColor('white');
   labels.fontSize("14px");
+  labels.fontFamily('Roboto');
   labels.fontWeight('bold');
   labels.offsetY(-10);
   labels.connectorStroke({ color: '#DCDCDC' , thickness: 2 });
@@ -49,15 +50,26 @@ anychart.onDocumentReady(() => {
   series.colorScale(anychart.scales.ordinalColor([
     {from:0, to:9, color: '#F94144'},
     {from:10, to:19, color: '#F3722C'},
-    {from:20, to:29, color: '#F8961E'},
-    {from:30, to:39, color: '#F9844A'},
-    {from:40, to:49, color: '#F9C74F'},
-    {from:50, to:59, color: '#90BE6D'},
-    {from:60, to:69, color: '#43AA8B'},
-    {from:70, to:79, color: '#4D908E'},
-    {from:80, to:89, color: '#577590'},
-    {from:90, to:100, color: '#277DA1'},
+    {from:20, to:29, color: '#F7B926'},
+    {from:30, to:39, color: '#90BE6D'},
+    {from:40, to:49, color: '#43AA8B'},
+    {from:50, to:59, color: '#4D908E'},
+    {from:60, to:69, color: '#577590'},
+    {from:70, to:70, color: '#277DA1'},
+    {from:80, to:90, color: '#8F43AB'}
   ]));
+  // series.colorScale(anychart.scales.ordinalColor([
+  //   {from:0, to:9, color: '#00188f'},
+  //   {from:10, to:19, color: '#ff8c00'},
+  //   {from:20, to:29, color: '#00b294'},
+  //   {from:30, to:39, color: '#ec008c'},
+  //   {from:40, to:49, color: '#bad80a'},
+  //   {from:50, to:59, color: '#68217a'},
+  //   {from:60, to:69, color: '#009e49'},
+  //   {from:70, to:79, color: '#e81123'},
+  //   {from:80, to:89, color: '#00bcf2'},
+  //   {from:90, to:100, color: '#fff100'},
+  // ]));
   series.hovered().fill('#577590');
 
   // set geo data, you can find this map in our geo maps collection
@@ -79,11 +91,12 @@ const getMonthDayStr = (date) => {
 }
 
 const addEventListeners = (allData, dataSet) => {
-  let slider = document.getElementById("myRange");
+  let slider = document.querySelector(".rs-range");
   let playButton = document.querySelector('.play-button');
   let monthDayLabel = document.querySelector('.month-day');
   let yearLabel = document.querySelector('.year');
   let date = new Date(daysOfYear[0]);
+  let playing = false;
   
   monthDayLabel.innerHTML = getMonthDayStr(date);
   yearLabel.innerHTML = date.getFullYear();
@@ -97,8 +110,17 @@ const addEventListeners = (allData, dataSet) => {
     yearLabel.innerHTML = date.getFullYear();
   }
 
-  slider.oninput = function() {
+  // setTimeout(() => {
+  //   document.querySelector('#audio').play();
+  // }, 10000)
+
+  slider.oninput = () => {
     updateState();
+  }
+
+  slider.onchange = () => {
+    const timestamp = Math.floor((slider.value/365)*253)
+    document.querySelector('#audio').currentTime = timestamp;
   }
 
   let playInterval;
@@ -107,18 +129,18 @@ const addEventListeners = (allData, dataSet) => {
       if (slider.value < 365) {
         let val = Number(slider.value);
         slider.value = val + 1;
-        console.log(typeof slider.value)
-        console.log(slider.value);
         updateState();
       }
     }
-    if (playButton.innerHTML === '▶️') {
+    if (!playing) {
       play();
+      document.querySelector('#audio').play();
       playInterval = setInterval(() => play(), 500);
-      playButton.innerHTML = '⏸'
+      playing = true;
     } else {
+      document.querySelector('#audio').pause();
       clearInterval(playInterval);
-      playButton.innerHTML = '▶️'
+      playing = false;
     }
   })
 
