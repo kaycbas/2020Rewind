@@ -104,22 +104,17 @@ const addEventListeners = (allData, dataSet) => {
   const updateState = () => {
     dataSet.data(allData[daysOfYear[slider.value]])
     // anychart.data.set(allData[daysOfYear[slider.value]])
-
     let date = new Date(daysOfYear[slider.value]);
     monthDayLabel.innerHTML = getMonthDayStr(date); 
     yearLabel.innerHTML = date.getFullYear();
   }
-
-  // setTimeout(() => {
-  //   document.querySelector('#audio').play();
-  // }, 10000)
 
   slider.oninput = () => {
     updateState();
   }
 
   slider.onchange = () => {
-    const timestamp = Math.floor((slider.value/365)*253)
+    const timestamp = Math.floor((slider.value/365)*182)
     document.querySelector('#audio').currentTime = timestamp;
   }
 
@@ -130,6 +125,11 @@ const addEventListeners = (allData, dataSet) => {
         let val = Number(slider.value);
         slider.value = val + 1;
         updateState();
+      } else {
+        let credits = document.querySelector('.credits');
+        let main = document.querySelector('.main');
+        credits.classList.add('visible');
+        main.classList.add('invisible');
       }
     }
     if (!playing) {

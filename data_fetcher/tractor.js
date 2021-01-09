@@ -153,7 +153,6 @@ const compileAllData = async () => {
     let dayData = await combineAndFormatDayData(dayOfYear, allSearchTerms[dayOfYear]);
     allData2020[dayOfYear] = dayData;
   }
-  // console.log(allData2020)
   fs.writeFileSync(`./all_us_trends_2020.json`, JSON.stringify(allData2020));
 }
 

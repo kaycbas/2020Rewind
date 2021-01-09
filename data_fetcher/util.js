@@ -9,7 +9,6 @@ for (let d = new Date(2020, 0, 1); d <= new Date(2020, 11, 31); d.setDate(d.getD
     let formattedDate = [year, month, day].join('-');
     daysOfYear.push(formattedDate);
 }
-// console.dir(daysOfYear, {'maxArrayLength': null});
 
 // Create data file structure
 const setupFileStruct = () => {

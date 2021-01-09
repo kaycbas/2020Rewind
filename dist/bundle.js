@@ -29,8 +29,7 @@ for (var d = new Date(2020, 0, 1); d <= new Date(2020, 11, 31); d.setDate(d.getD
   var day = d.getDate();
   var formattedDate = [year, month, day].join('-');
   daysOfYear.push(formattedDate);
-} // console.dir(daysOfYear, {'maxArrayLength': null});
-// Create data file structure
+} // Create data file structure
 // const setupFileStruct = () => {
 //     for (let i = 0; i < daysOfYear.length; i++) {
 //       const dir = "./data/".concat(daysOfYear[i]);
@@ -580,17 +579,14 @@ var addEventListeners = function addEventListeners(allData, dataSet) {
     var date = new Date(daysOfYear[slider.value]);
     monthDayLabel.innerHTML = getMonthDayStr(date);
     yearLabel.innerHTML = date.getFullYear();
-  }; // setTimeout(() => {
-  //   document.querySelector('#audio').play();
-  // }, 10000)
-
+  };
 
   slider.oninput = function () {
     updateState();
   };
 
   slider.onchange = function () {
-    var timestamp = Math.floor(slider.value / 365 * 253);
+    var timestamp = Math.floor(slider.value / 365 * 182);
     document.querySelector('#audio').currentTime = timestamp;
   };
 
@@ -601,6 +597,11 @@ var addEventListeners = function addEventListeners(allData, dataSet) {
         var val = Number(slider.value);
         slider.value = val + 1;
         updateState();
+      } else {
+        var credits = document.querySelector('.credits');
+        var main = document.querySelector('.main');
+        credits.classList.add('visible');
+        main.classList.add('invisible');
       }
     };
 
