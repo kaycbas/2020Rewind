@@ -1,4 +1,4 @@
-// const fs = require('fs');
+const fs = require('fs');
 
 // Create formatted daysOfYear array
 let daysOfYear = [];
@@ -12,17 +12,17 @@ for (let d = new Date(2020, 0, 1); d <= new Date(2020, 11, 31); d.setDate(d.getD
 // console.dir(daysOfYear, {'maxArrayLength': null});
 
 // Create data file structure
-// const setupFileStruct = () => {
-//     for (let i = 0; i < daysOfYear.length; i++) {
-//       const dir = "./data/".concat(daysOfYear[i]);
-//       if (!fs.existsSync(dir)) {
-//         fs.mkdirSync(dir, {
-//           recursive: true
-//         });
-//       }
-//     }
-// }
-// setupFileStruct();
+const setupFileStruct = () => {
+    for (let i = 0; i < daysOfYear.length; i++) {
+      const dir = "./data/".concat(daysOfYear[i]);
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, {
+          recursive: true
+        });
+      }
+    }
+}
+setupFileStruct();
 
 // Top search terms each day
 const allSearchTerms = {
