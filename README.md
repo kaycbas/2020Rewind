@@ -1,3 +1,3 @@
-# TrendTracker
+# 2020 Rewind
 
-### [Live Link](https://kaycbas.github.io/TrendTracker/)
+### [Live Link](https://kaycbas.github.io/2020Rewind/)
