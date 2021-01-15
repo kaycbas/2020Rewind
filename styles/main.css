@@ -241,3 +241,30 @@ body {
 .muted > .volume-off {
     display: inline;
 }
+
+/* Responsive */
+
+@media only screen and (max-width: 1060px) {
+    text {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    text {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    text {
+        font-size: 8px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    text {
+        font-size: 6px;
+        white-space: normal;
+    }
+}
