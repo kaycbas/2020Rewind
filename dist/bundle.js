@@ -976,6 +976,7 @@ var getMonthDayStr = function getMonthDayStr(date) {
 var addEventListeners = function addEventListeners(allData, dataSet) {
   var slider = document.querySelector(".rs-range");
   var playButton = document.querySelector('.play-button');
+  var volumeButton = document.querySelector('.volume');
   var monthDayLabel = document.querySelector('.month-day');
   var yearLabel = document.querySelector('.year');
   var date = new Date(daysOfYear[0]);
@@ -1025,6 +1026,17 @@ var addEventListeners = function addEventListeners(allData, dataSet) {
       document.querySelector('#audio').pause();
       clearInterval(playInterval);
       playing = false;
+    }
+  });
+  volumeButton.addEventListener('click', function () {
+    var audio = document.querySelector('#audio');
+
+    if (volumeButton.classList.contains('muted')) {
+      volumeButton.classList.remove('muted');
+      audio.muted = false;
+    } else {
+      volumeButton.classList.add('muted');
+      audio.muted = true;
     }
   });
 };

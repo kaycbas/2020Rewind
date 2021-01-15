@@ -75,6 +75,7 @@ const getMonthDayStr = (date) => {
 const addEventListeners = (allData, dataSet) => {
   let slider = document.querySelector(".rs-range");
   let playButton = document.querySelector('.play-button');
+  let volumeButton = document.querySelector('.volume');
   let monthDayLabel = document.querySelector('.month-day');
   let yearLabel = document.querySelector('.year');
   let date = new Date(daysOfYear[0]);
@@ -123,6 +124,18 @@ const addEventListeners = (allData, dataSet) => {
       document.querySelector('#audio').pause();
       clearInterval(playInterval);
       playing = false;
+    }
+  })
+
+  volumeButton.addEventListener('click', () => {
+    let audio = document.querySelector('#audio');
+    
+    if (volumeButton.classList.contains('muted')) {
+      volumeButton.classList.remove('muted');
+      audio.muted = false;
+    } else {
+      volumeButton.classList.add('muted');
+      audio.muted = true;
     }
   })
 
