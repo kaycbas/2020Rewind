@@ -979,16 +979,16 @@ var addEventListeners = function addEventListeners(allData, dataSet) {
   var volumeButton = document.querySelector('.volume');
   var monthDayLabel = document.querySelector('.month-day');
   var yearLabel = document.querySelector('.year');
-  var date = new Date(daysOfYear[0]);
+  var date = new Date(daysOfYear[0].replace(/-/g, "/"));
   var playing = false;
-  monthDayLabel.innerHTML = getMonthDayStr(date);
-  yearLabel.innerHTML = date.getFullYear();
+  monthDayLabel.innerText = getMonthDayStr(date);
+  yearLabel.innerText = date.getFullYear();
 
   var updateState = function updateState() {
     dataSet.data(allData[daysOfYear[slider.value]]);
-    var date = new Date(daysOfYear[slider.value]);
-    monthDayLabel.innerHTML = getMonthDayStr(date);
-    yearLabel.innerHTML = date.getFullYear();
+    var date = new Date(daysOfYear[slider.value].replace(/-/g, "/"));
+    monthDayLabel.innerText = getMonthDayStr(date);
+    yearLabel.innerText = date.getFullYear();
   };
 
   slider.oninput = function () {

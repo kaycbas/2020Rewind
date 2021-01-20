@@ -71,14 +71,13 @@ const getMonthDayStr = (date) => {
   let day = date.getUTCDate();
   return month.concat(' ', day, ', ');
 }
-
 const addEventListeners = (allData, dataSet) => {
   let slider = document.querySelector(".rs-range");
   let playButton = document.querySelector('.play-button');
   let volumeButton = document.querySelector('.volume');
   let monthDayLabel = document.querySelector('.month-day');
   let yearLabel = document.querySelector('.year');
-  let date = new Date(daysOfYear[0]);
+  let date = new Date(daysOfYear[0].replace(/-/g, "/"));
   let playing = false;
   
   monthDayLabel.innerText = getMonthDayStr(date);
@@ -87,7 +86,7 @@ const addEventListeners = (allData, dataSet) => {
   const updateState = () => {
     dataSet.data(allData[daysOfYear[slider.value]])
 
-    let date = new Date(daysOfYear[slider.value]);
+    let date = new Date(daysOfYear[slider.value].replace(/-/g, "/"));
     monthDayLabel.innerText = getMonthDayStr(date); 
     yearLabel.innerText = date.getFullYear();
   }
