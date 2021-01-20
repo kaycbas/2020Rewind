@@ -272,6 +272,10 @@ body {
         right: 9%;
         bottom: 38%;
     }
+    .range-container {
+        position: absolute;
+        bottom: 100px;
+    }
     .range-slider {
         width: 60%;
     }
