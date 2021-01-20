@@ -81,15 +81,15 @@ const addEventListeners = (allData, dataSet) => {
   let date = new Date(daysOfYear[0]);
   let playing = false;
   
-  monthDayLabel.innerHTML = getMonthDayStr(date);
-  yearLabel.innerHTML = date.getFullYear();
+  monthDayLabel.innerText = getMonthDayStr(date);
+  yearLabel.innerText = date.getFullYear();
 
   const updateState = () => {
     dataSet.data(allData[daysOfYear[slider.value]])
 
     let date = new Date(daysOfYear[slider.value]);
-    monthDayLabel.innerHTML = getMonthDayStr(date); 
-    yearLabel.innerHTML = date.getFullYear();
+    monthDayLabel.innerText = getMonthDayStr(date); 
+    yearLabel.innerText = date.getFullYear();
   }
 
   slider.oninput = () => {
