@@ -20,4 +20,4 @@ Simply drag the slider to traverse the top trending searches throughout 2020, or
 This part was hard. Let me tell you about it.
 
 ## Future Features:
-- Automate ongoing data gathering so that the map always stays up to date with latest trends
+- Automate ongoing data gathering so the map stays up to date with latest trends
