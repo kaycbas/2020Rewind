@@ -76,6 +76,8 @@ const addEventListeners = (allData, dataSet) => {
   let playButton = document.querySelector('.play-button');
   let volumeButton = document.querySelector('.volume');
   let infoButton = document.querySelector('.fa-info-circle');
+  let infoModal = document.querySelector('.info-modal');
+  let closeButton = document.querySelector('.fa-times-circle');
   let monthDayLabel = document.querySelector('.month-day');
   let yearLabel = document.querySelector('.year');
   let date = new Date(daysOfYear[0].replace(/-/g, "/"));
@@ -93,7 +95,16 @@ const addEventListeners = (allData, dataSet) => {
   }
 
   infoButton.addEventListener('click', () => {
-    
+    console.log(infoModal.style.display);
+    if (infoModal.style.display === "block") {
+      infoModal.style.display = "none";
+    } else {
+      infoModal.style.display = "block";
+    }
+  })
+
+  closeButton.addEventListener('click', () => {
+    infoModal.style.display = "none";
   })
 
   slider.oninput = () => {

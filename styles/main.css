@@ -26,10 +26,14 @@ body {
 
 /* .fa-question-circle { */
 .fa-info-circle {
-    color: #777777;
+    color: white;
     padding: 10px;
     cursor: pointer;
     z-index: 101;
+}
+
+.fa-info-circle:hover {
+    color: #cbcbcb; 
 }
 
 .info-modal {
@@ -39,23 +43,35 @@ body {
     margin-right: auto;
     left: 0;
     right: 0;
-    top: 35%;
+    top: 25%;
     text-align: center;
     background-color: #1b262c;
     width: 30%;
-    height: 20%;
+    /* height: 20%; */
     border-radius: 10px;
     border: 3px solid white;
-    padding: 10px;
+    /* padding: 18px; */
+    display: none;
 }
 
-.close {
+.modal-content {
+    padding: 15px 30px;
+}
+
+.fa-times-circle {
     color: white;
     position: absolute;
-    right: 10px;
-    top: 1px;
-    font-size: 24px;
-    font-weight: bold;
+    right: 9px;
+    top: 9px;
+    /* font-size: 24px; */
+    /* font-weight: bold; */
+}
+
+.fa-times-circle:hover,
+.fa-times-circle:focus {
+    color: #cbcbcb;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .modal-content {

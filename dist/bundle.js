@@ -978,6 +978,8 @@ var addEventListeners = function addEventListeners(allData, dataSet) {
   var playButton = document.querySelector('.play-button');
   var volumeButton = document.querySelector('.volume');
   var infoButton = document.querySelector('.fa-info-circle');
+  var infoModal = document.querySelector('.info-modal');
+  var closeButton = document.querySelector('.fa-times-circle');
   var monthDayLabel = document.querySelector('.month-day');
   var yearLabel = document.querySelector('.year');
   var date = new Date(daysOfYear[0].replace(/-/g, "/"));
@@ -992,7 +994,18 @@ var addEventListeners = function addEventListeners(allData, dataSet) {
     yearLabel.innerText = date.getFullYear();
   };
 
-  infoButton.addEventListener('click', function () {});
+  infoButton.addEventListener('click', function () {
+    console.log(infoModal.style.display);
+
+    if (infoModal.style.display === "block") {
+      infoModal.style.display = "none";
+    } else {
+      infoModal.style.display = "block";
+    }
+  });
+  closeButton.addEventListener('click', function () {
+    infoModal.style.display = "none";
+  });
 
   slider.oninput = function () {
     updateState();
