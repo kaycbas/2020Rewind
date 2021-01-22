@@ -75,6 +75,7 @@ const addEventListeners = (allData, dataSet) => {
   let slider = document.querySelector(".rs-range");
   let playButton = document.querySelector('.play-button');
   let volumeButton = document.querySelector('.volume');
+  let infoButton = document.querySelector('.fa-info-circle');
   let monthDayLabel = document.querySelector('.month-day');
   let yearLabel = document.querySelector('.year');
   let date = new Date(daysOfYear[0].replace(/-/g, "/"));
@@ -90,6 +91,10 @@ const addEventListeners = (allData, dataSet) => {
     monthDayLabel.innerText = getMonthDayStr(date); 
     yearLabel.innerText = date.getFullYear();
   }
+
+  infoButton.addEventListener('click', () => {
+    
+  })
 
   slider.oninput = () => {
     updateState();

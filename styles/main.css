@@ -6,10 +6,59 @@ body {
         sans-serif;
 }
 
+.title-container {
+    padding-top: 50px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-title {
+    text-align: center;
+    font-family: 'Roboto',
+    Helvetica,
+    Arial,
+    sans-serif;
+    font-size: 48px;
+    /* padding-bottom: -50px; */
+}
+
+/* .fa-question-circle { */
+.fa-info-circle {
+    color: #777777;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.info-modal {
+    z-index: 102;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 35%;
+    text-align: center;
+    background-color: blue;
+    width: 30%;
+    height: 20%;
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
 .map-container {
     /* width: 80vw; */
     height: 80vh;
-    padding-top: 40px;
+    /* padding-top: 40px; */
     padding-right: 50px;
 }
 
@@ -176,7 +225,7 @@ body {
 }
 
 .credits {
-    z-index: 100000;
+    z-index: 100;
     position: absolute;
     padding-top: 400px;
     margin-left: auto;

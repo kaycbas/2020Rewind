@@ -977,6 +977,7 @@ var addEventListeners = function addEventListeners(allData, dataSet) {
   var slider = document.querySelector(".rs-range");
   var playButton = document.querySelector('.play-button');
   var volumeButton = document.querySelector('.volume');
+  var infoButton = document.querySelector('.fa-info-circle');
   var monthDayLabel = document.querySelector('.month-day');
   var yearLabel = document.querySelector('.year');
   var date = new Date(daysOfYear[0].replace(/-/g, "/"));
@@ -990,6 +991,8 @@ var addEventListeners = function addEventListeners(allData, dataSet) {
     monthDayLabel.innerText = getMonthDayStr(date);
     yearLabel.innerText = date.getFullYear();
   };
+
+  infoButton.addEventListener('click', function () {});
 
   slider.oninput = function () {
     updateState();
