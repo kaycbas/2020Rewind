@@ -78,6 +78,8 @@ const addEventListeners = (allData, dataSet) => {
   let infoButton = document.querySelector('.fa-info-circle');
   let infoModal = document.querySelector('.info-modal');
   let closeButton = document.querySelector('.fa-times-circle');
+  let sourcesButton = document.querySelector('.sources-btn');
+  let sources = document.querySelector('.sources');
   let monthDayLabel = document.querySelector('.month-day');
   let yearLabel = document.querySelector('.year');
   let date = new Date(daysOfYear[0].replace(/-/g, "/"));
@@ -95,11 +97,19 @@ const addEventListeners = (allData, dataSet) => {
   }
 
   infoButton.addEventListener('click', () => {
-    console.log(infoModal.style.display);
     if (infoModal.style.display === "block") {
       infoModal.style.display = "none";
     } else {
       infoModal.style.display = "block";
+    }
+    sources.style.display = "none";
+  })
+
+  sourcesButton.addEventListener('click', () => {
+    if (sources.style.display === "block") {
+      sources.style.display = "none";
+    } else {
+      sources.style.display = "block";
     }
   })
 

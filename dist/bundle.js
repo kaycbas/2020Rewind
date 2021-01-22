@@ -980,6 +980,8 @@ var addEventListeners = function addEventListeners(allData, dataSet) {
   var infoButton = document.querySelector('.fa-info-circle');
   var infoModal = document.querySelector('.info-modal');
   var closeButton = document.querySelector('.fa-times-circle');
+  var sourcesButton = document.querySelector('.sources-btn');
+  var sources = document.querySelector('.sources');
   var monthDayLabel = document.querySelector('.month-day');
   var yearLabel = document.querySelector('.year');
   var date = new Date(daysOfYear[0].replace(/-/g, "/"));
@@ -995,12 +997,19 @@ var addEventListeners = function addEventListeners(allData, dataSet) {
   };
 
   infoButton.addEventListener('click', function () {
-    console.log(infoModal.style.display);
-
     if (infoModal.style.display === "block") {
       infoModal.style.display = "none";
     } else {
       infoModal.style.display = "block";
+    }
+
+    sources.style.display = "none";
+  });
+  sourcesButton.addEventListener('click', function () {
+    if (sources.style.display === "block") {
+      sources.style.display = "none";
+    } else {
+      sources.style.display = "block";
     }
   });
   closeButton.addEventListener('click', function () {
