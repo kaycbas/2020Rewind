@@ -54,16 +54,17 @@ body {
     text-align: center;
     background-color: #1b262c;
     width: 35%;
-    /* height: 20%; */
     border-radius: 10px;
     border: 3px solid white;
-    /* padding: 18px; */
     display: none;
 }
 
 .modal-content {
-    padding: 15px 30px;
+    padding: 30px;
+}
 
+.modal-title {
+    font-weight: bold;
 }
 
 .sources-btn {
@@ -110,6 +111,7 @@ body {
 }
 
 .map-container {
+    /* margin: 0 auto; */
     /* width: 80vw; */
     height: 80vh;
     /* padding-top: 40px; */
