@@ -6,7 +6,7 @@
 
 ## How to Use:
 
-Simply drag the slider to traverse the top trending searches throughout 2020, or click the play button to watch it like a movie with an epic Hans Zimmer soundtrack.
+Drag the slider to traverse the top trending searches throughout 2020, or click the play button to watch it like a movie with an epic Hans Zimmer soundtrack.
 
 ## Built with:
 
