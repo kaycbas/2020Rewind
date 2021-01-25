@@ -9,13 +9,16 @@ body {
 }
 
 .main {
-    height: 100%;
-    max-height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Main Title */
 .title-container {
-    padding-top: 50px;
     color: white;
     display: flex;
     align-items: center;
@@ -24,15 +27,9 @@ body {
 
 .main-title {
     text-align: center;
-    font-family: 'Roboto',
-    Helvetica,
-    Arial,
-    sans-serif;
     font-size: 48px;
-    /* padding-bottom: -50px; */
 }
 
-/* .fa-question-circle { */
 .fa-info-circle {
     color: white;
     padding: 10px;
@@ -41,9 +38,33 @@ body {
 }
 
 .fa-info-circle:hover {
-    color: #cbcbcb; 
+    color: #cbcbcb;
 }
 
+/* Map */
+.map-section {
+    position: relative;
+    width: 1400px;
+    height: 700px;
+}
+
+.map-container {
+    width: 100%;
+    height: 100%;
+}
+
+.date-label {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    font-size: 48px;
+    right: 10%;
+    bottom: 25%;
+}
+
+/* Modal */
 .info-modal {
     z-index: 102;
     position: absolute;
@@ -69,7 +90,7 @@ body {
 }
 
 .sources-btn {
-    color:#90BE6D;
+    color: #90BE6D;
     text-decoration: underline;
     cursor: pointer;
 }
@@ -87,8 +108,6 @@ body {
     position: absolute;
     right: 9px;
     top: 9px;
-    /* font-size: 24px; */
-    /* font-weight: bold; */
 }
 
 .fa-times-circle:hover,
@@ -101,9 +120,9 @@ body {
 .modal-content {
     color: white;
     font-family: 'Roboto',
-    Helvetica,
-    Arial,
-    sans-serif;
+        Helvetica,
+        Arial,
+        sans-serif;
     font-size: 20px;
 }
 
@@ -111,76 +130,21 @@ body {
     color: #F7B926;
 }
 
-.map-section {
-    position: relative;
-}
-
-.map-container {
-    /* margin: 0 auto; */
-    /* width: 80vw; */
-    /* width: 1200px; */
-    height: 80vh;
-    /* height: 700px; */
-    /* padding-top: 40px; */
-    padding-right: 50px;
-}
-
-.title {
-    display: flex;
-    justify-content: center;
-    color: white;
-    font-family: 'Roboto', 'Lato', Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    font-size: 36px;
-    padding: 20px;
-}
-
-.date-label {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    font-family: 'Roboto',
-        Arial,
-        Helvetica,
-        sans-serif;
-    font-size: 48px;
-    right: 14%;
-    bottom: 23%;
-}
-
 /* Slider */
-
-.slidecontainer {
+.range-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    color: white;
-    width: 100%;
-    padding-top: 10px;
+    justify-content: center;
+    width: 1400px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
-.play-button {
-    cursor: pointer;
-    padding-right: 10px;
-    font-size: 24px;
-}
-
-/* The slider itself */
 #slider {
     width: 80%;
     height: 12px;
 }
 
-.range-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
 
 .range-slider {
     width: 80%;
@@ -253,6 +217,12 @@ body {
     width: 40px;
 }
 
+.play-button {
+    cursor: pointer;
+    padding-right: 10px;
+    font-size: 24px;
+}
+
 #play-pause {
     display: none;
 }
@@ -264,7 +234,6 @@ body {
     padding-top: 8px;
 }
 
-
 #play-pause:checked+#play-pause-label::after {
     content: "❙❙";
 }
@@ -274,7 +243,6 @@ body {
 }
 
 /* Trial Blocker */
-
 .trial-blocker {
     width: 200px;
     height: 20px;
@@ -284,6 +252,7 @@ body {
     bottom: 0;
 }
 
+/* Credits */
 .credits {
     z-index: 100;
     position: absolute;
@@ -343,72 +312,221 @@ body {
     display: none;
 }
 
-.muted > .volume-on {
+.muted>.volume-on {
     display: none;
 }
 
-.muted > .volume-off {
+.muted>.volume-off {
     display: inline;
 }
 
 /* Responsive */
 
-/* @import "responsive.css"; */
+@media only screen and (min-width: 2600px) {
+    .map-section {
+        width: 2400px;
+        height: 1200px;
+    }
 
-@media only screen and (max-width: 1400px) {
-    .date-label {
-        font-size: 36px;;
+    .range-container {
+        width: 2400px;
     }
 }
 
-@media only screen and (max-width: 1060px) {
+@media only screen and (min-width: 2300px) and (max-width: 2600px) {
+    .map-section {
+        width: 2100px;
+        height: 1050px;
+    }
+
+    .range-container {
+        width: 2100px;
+    }
+
+    .date-label {
+        right: 12%;
+        bottom: 26%;
+    }
+}
+
+@media only screen and (min-width: 2000px) and (max-width: 2300px) {
+    .map-section {
+        width: 1800px;
+        height: 900px;
+    }
+
+    .range-container {
+        width: 1800px;
+    }
+
+    .date-label {
+        right: 12%;
+        bottom: 26%;
+    }
+}
+
+@media only screen and (min-width: 1700px) and (max-width: 2000px) {
+    .map-section {
+        width: 1600px;
+        height: 800px;
+    }
+
+    .range-container {
+        width: 1600px;
+    }
+
+    .date-label {
+        right: 12%;
+        bottom: 26%;
+    }
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1700px) {
+    /* leave as-is */
+
+    /* 
+
+    .main-title {
+        font-size: 48px;
+    }
+    .map-section {
+        width: 1400px;
+        height: 700px;
+    }
+    .range-container {
+        width: 1400px;
+    }
+    .date-label {
+        font-size: 48px;
+        right: 10%;
+        bottom: 25%;
+    } 
+
+    */
+}
+
+@media only screen and (min-width: 1100px) and (max-width: 1400px) {
+    .main-title {
+        font-size: 36px;
+    }
+
+    .fa-info-circle {
+        font-size: 36px !important;
+    }
+
+    .map-section {
+        width: 1100px;
+        height: 550px;
+    }
+
+    .range-container {
+        width: 1100px;
+    }
+
+    .date-label {
+        font-size: 36px;
+        right: 10%;
+        bottom: 26%;
+    }
+
     text {
         font-size: 14px;
     }
 }
 
-@media only screen and (max-width: 950px) {
-    text {
-        font-size: 12px;
+@media only screen and (min-width: 800px) and (max-width: 1100px) {
+    .main-title {
+        font-size: 28px;
     }
 
-    .date-label {
-        font-size: 30px;
-        right: 8%;
-        bottom: 30%;
-    }
-}
-
-@media only screen and (max-width: 700px) {
-    text {
-        font-size: 8px;
+    .fa-info-circle {
+        font-size: 28px !important;
     }
 
-    .date-label {
-        font-size: 24px;
-        right: 10%;
-        bottom: 36%;
-    }
-}
-
-@media only screen and (max-width: 450px) {
-    text {
-        font-size: 6px;
-        white-space: normal;
-    }
-
-    .date-label {
-        font-size: 16px;
-        right: 9%;
-        bottom: 38%;
+    .map-section {
+        width: 800px;
+        height: 400px;
     }
 
     .range-container {
-        position: absolute;
-        bottom: 200px;
+        width: 800px;
     }
 
-    .range-slider {
-        width: 60%;
+    .date-label {
+        font-size: 28px;
+        right: 10%;
+        bottom: 26%;
+    }
+
+    text {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 800px) {
+    .main-title {
+        font-size: 22px;
+    }
+
+    .fa-info-circle {
+        font-size: 22px !important;
+    }
+
+    .map-section {
+        width: 500px;
+        height: 250px;
+    }
+
+    .range-container {
+        width: 500px;
+    }
+
+    .date-label {
+        font-size: 20px;
+        right: 10%;
+        bottom: 26%;
+    }
+
+    text {
+        font-size: 7px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .main-title {
+        font-size: 22px;
+    }
+
+    .fa-info-circle {
+        font-size: 22px !important;
+    }
+
+    .map-section {
+        width: 80vw;
+        height: 60vw;
+    }
+
+    .range-container {
+        width: 80vw;
+    }
+
+    .date-label {
+        font-size: 14px;
+        right: 0%;
+        bottom: 35%;
+    }
+
+    text {
+        font-size: 6px;
+    }
+
+    .play-button {
+        font-size: 22px !important;
+    }
+    .fa-volume-up {
+        font-size: 22px !important;
+    }
+    .fa-volume-off {
+        font-size: 22px !important;
     }
 }
