@@ -11,7 +11,7 @@ anychart.onDocumentReady(() => {
   map.removeAllListeners();
   // map.title('2020 in Search')
 
-  let allData = require('./trends_2020.json');
+  let allData = require('../assets/data/trends_2020.json');
   let states = allData["2020-1-1"];
   // let states = require('../temp.json');
 

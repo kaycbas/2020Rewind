@@ -2,7 +2,7 @@
 
 2020 Rewind is an interactive map of the top trending daily Google searches for every US state in 2020, built using HTML, CSS, Javascript, and AnyChart.
 
-![Rewind](https://github.com/kaycbas/2020Rewind/blob/main/readme/rewind.gif)
+![Rewind](https://github.com/kaycbas/2020Rewind/blob/main/assets/readme/rewind.gif)
 
 ## How to Use:
 
