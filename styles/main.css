@@ -522,10 +522,16 @@ body {
 
     text {
         font-size: 5px;
+        padding-top: 20px !important;
+        margin-top: 20px;
     }
 
     .info-modal {
         font-size: 14px;
         width: 95vw;
+    }
+
+    path {
+        stroke-width: 0.5;
     }
 }
