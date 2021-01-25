@@ -136,19 +136,13 @@ body {
     z-index: 104;
 }
 
-#slider {
-    width: 80%;
-    height: 12px;
-}
-
-
 .range-slider {
     width: 80%;
 }
 
 .rs-range {
-    /* margin-top: 29px; */
     width: 100%;
+    z-index: 105;
     -webkit-appearance: none;
 }
 
@@ -303,10 +297,12 @@ body {
     padding-left: 20px;
     color: white;
     cursor: pointer;
+    z-index: 105;
 }
 
 .volume-off {
     display: none;
+    z-index: 105;
 }
 
 .muted>.volume-on {
@@ -460,14 +456,9 @@ body {
         font-size: 10px;
     }
 
-
     .info-modal {
         font-size: 16px;
         width: 440px;
-    }
-
-    .fa-times-circle {
-
     }
 }
 
@@ -530,18 +521,8 @@ body {
     }
 
     text {
-        font-size: 6px;
+        font-size: 5px;
     }
-
-    /* .play-button {
-        font-size: 22px !important;
-    }
-    .fa-volume-up {
-        font-size: 22px !important;
-    }
-    .fa-volume-off {
-        font-size: 22px !important;
-    } */
 
     .info-modal {
         font-size: 14px;
