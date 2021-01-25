@@ -217,6 +217,7 @@ body {
     cursor: pointer;
     padding-right: 10px;
     font-size: 24px;
+    z-index: 105;
 }
 
 #play-pause {
@@ -532,7 +533,7 @@ body {
         font-size: 6px;
     }
 
-    .play-button {
+    /* .play-button {
         font-size: 22px !important;
     }
     .fa-volume-up {
@@ -540,7 +541,7 @@ body {
     }
     .fa-volume-off {
         font-size: 22px !important;
-    }
+    } */
 
     .info-modal {
         font-size: 14px;
