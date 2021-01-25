@@ -8,6 +8,7 @@ anychart.onDocumentReady(() => {
 
   // create map
   let map = anychart.map();
+  map.removeAllListeners();
   // map.title('2020 in Search')
 
   let allData = require('./trends_2020.json');

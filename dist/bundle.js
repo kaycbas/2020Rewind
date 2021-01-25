@@ -890,7 +890,8 @@ var _require = __webpack_require__(/*! ./util */ "./src/util.js"),
 
 anychart.onDocumentReady(function () {
   // create map
-  var map = anychart.map(); // map.title('2020 in Search')
+  var map = anychart.map();
+  map.removeAllListeners(); // map.title('2020 in Search')
 
   var allData = __webpack_require__(/*! ./trends_2020.json */ "./src/trends_2020.json");
 
