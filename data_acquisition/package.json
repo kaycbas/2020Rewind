@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "google-trends-api": "^4.9.2",
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "mkdirp": "^1.0.4"
   }
 }

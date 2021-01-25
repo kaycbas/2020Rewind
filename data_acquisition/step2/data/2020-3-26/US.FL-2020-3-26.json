@@ -1,0 +1,13 @@
+{
+    "default": {
+        "timelineData": [{
+            "time": "1585180800",
+            "formattedTime": "Mar 26, 2020",
+            "formattedAxisTime": "Mar 26, 2020",
+            "value": [3, 100, 5, 3, 16],
+            "hasData": [true, true, true, true, true],
+            "formattedValue": ["3", "100", "5", "3", "16"]
+        }],
+        "averages": [3, 100, 5, 3, 16]
+    }
+}
