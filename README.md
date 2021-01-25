@@ -20,13 +20,13 @@ Drag the slider to traverse the top trending searches throughout 2020, or click 
 Gathering accurate data for the top trending Google searches was a challenging process. A few factors contributed to this difficulty:
 
 -	Google does not offer an API for querying search trends, they only provide the Google Trends website. 
-o	This meant that, in order to automate the process, I had to use a 3rd party API that hits the Google Trends website.
+    -	This meant that, in order to automate the process, I had to use a 3rd party API that hits the Google Trends website.
 -	The Google Trends website does not provide absolute search volume or tell you the most trending search term, it will only tell you the relative search volume between terms. 
-o	This meant I had to use comparisons to determine each day’s top search term, and then compare every other search term to this benchmark term to gauge their relative interest.
+    -	This meant I had to use comparisons to determine each day’s top search term, and then compare every other search term to this benchmark term to gauge their relative interest.
 -	Google Trends only allows you to compare 5 search terms at a time. 
-o	When ordering a large set of n terms by their search interest, at least n/5 comparisons had to be made.
+    -	When ordering a large set of n terms by their search interest, at least n/5 comparisons had to be made.
 -	Google Trends limits the number of requests per minute you can make to the site, dramatically slowing data acquisition
-o	As a result, my scripts had to sleep between each request and would take hours to run.
+    -	As a result, my scripts had to sleep between each request and would take hours to run.
 
 Ultimately, I developed the following data acquisition process: 
 
