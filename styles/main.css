@@ -133,6 +133,7 @@ body {
     width: 1400px;
     padding-top: 15px;
     padding-bottom: 15px;
+    z-index: 104;
 }
 
 #slider {
