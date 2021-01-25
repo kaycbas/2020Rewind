@@ -72,17 +72,24 @@ body {
     margin-right: auto;
     left: 0;
     right: 0;
-    top: 25%;
+    top: 50%;
+    margin-top: -220px;
     text-align: center;
     background-color: #1b262c;
-    width: 35%;
+    color: white;
+    width: 580px;
     border-radius: 10px;
     border: 3px solid white;
     display: none;
+    font-size: 20px;
 }
 
 .modal-content {
     padding: 30px;
+}
+
+.modal-content a {
+    color: #F7B926;
 }
 
 .modal-title {
@@ -90,7 +97,7 @@ body {
 }
 
 .sources-btn {
-    color: #90BE6D;
+    color: #F7B926;
     text-decoration: underline;
     cursor: pointer;
 }
@@ -104,10 +111,11 @@ body {
 }
 
 .fa-times-circle {
+    z-index: 103;
     color: white;
     position: absolute;
-    right: 9px;
-    top: 9px;
+    right: 10px;
+    top: 10px;
 }
 
 .fa-times-circle:hover,
@@ -115,19 +123,6 @@ body {
     color: #cbcbcb;
     text-decoration: none;
     cursor: pointer;
-}
-
-.modal-content {
-    color: white;
-    font-family: 'Roboto',
-        Helvetica,
-        Arial,
-        sans-serif;
-    font-size: 20px;
-}
-
-.modal-content a {
-    color: #F7B926;
 }
 
 /* Slider */
@@ -381,6 +376,7 @@ body {
     }
 }
 
+/* default */
 @media only screen and (min-width: 1400px) and (max-width: 1700px) {
     /* leave as-is */
 
@@ -461,6 +457,16 @@ body {
     text {
         font-size: 10px;
     }
+
+
+    .info-modal {
+        font-size: 16px;
+        width: 440px;
+    }
+
+    .fa-times-circle {
+
+    }
 }
 
 @media only screen and (min-width: 500px) and (max-width: 800px) {
@@ -489,6 +495,11 @@ body {
 
     text {
         font-size: 7px;
+    }
+
+    .info-modal {
+        font-size: 16px;
+        width: 440px;
     }
 }
 
@@ -528,5 +539,10 @@ body {
     }
     .fa-volume-off {
         font-size: 22px !important;
+    }
+
+    .info-modal {
+        font-size: 14px;
+        width: 95vw;
     }
 }
