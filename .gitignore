@@ -1,6 +1,6 @@
 /node_modules
-/data_fetcher/node_modules
-/data_fetcher/data/**
+/data_acquisition/node_modules
+/data_acquisition/data/**
 /readme
 .DS_Store
 data_gathering.txt
