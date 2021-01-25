@@ -32,7 +32,7 @@ Ultimately, I developed the following data acquisition process:
 
 1.	Compile a large list of all the search terms and topics that trended in 2020. To do this, I used Google’s 2020 Year in Search summary and the Wayback Machine to view Google’s Daily Trending Searches throughout 2020. This step was performed manually.
 2.	Input this compiled list into a script that calculates and outputs the top 5 trending terms in the US for each day in 2020. The script uses the google-trends-api and a system of repeatedly comparing the relative search interest of 4 terms to a benchmark term in order to determine the top trending terms.
-3.	Input this list of each day’s top 5 trending searches into a second script that calculates their relative search interest across all US states, again using the google-trends-api.
+3.	Input this list of each day’s top 5 trending US searches into a second script that calculates their relative search interest across all the states, again using the google-trends-api.
 4.	Display results with the AnyChart US map.
 
 
