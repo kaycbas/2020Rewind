@@ -17,24 +17,19 @@ Drag the slider to traverse the top trending searches throughout 2020, or click 
 
 ## Data Gathering:
 
-Gathering accurate data for the top trending Google searches was a challenging process. A few factors contributed to this difficulty:
+Gathering accurate data for the top trending Google searches was a challenging process. Here is the process that was ultimately developed:
 
--	Google does not offer an API for querying search trends, they only provide the Google Trends website. 
-    -	This meant that, in order to automate the process, I had to use a 3rd party API that hits the Google Trends website.
--	The Google Trends website does not provide absolute search volume or tell you the most trending search term, it will only tell you the relative search volume between terms. 
-    -	This meant I had to use comparisons to determine each day’s top search term, and then compare every other search term to this benchmark term to gauge their relative interest.
--	Google Trends only allows you to compare 5 search terms at a time. 
-    -	When ordering a large set of n terms by their search interest, at least n/5 comparisons had to be made.
--	Google Trends limits the number of requests per minute you can make to the site, dramatically slowing data acquisition
-    -	As a result, my scripts had to sleep between each request and would take hours to run.
+### 1.	Compile list of candidate search terms
+The first step was to compile a large list of all the search terms and topics that trended in 2020. Google Trends does not have an api, and the tools it does provide do not support querying directly for top searched terms. Therefore, this list was compiled manually from Google’s 2020 Year in Search summary and by using the Wayback Machine to view the Daily Trending Searches page at various points throughout 2020.
 
-Ultimately, I developed the following data acquisition process: 
+### 2.	Calculate the top 5 trending terms in the US for each day
+The list compiled in the previous step was then inputted into a script that calculated the top 5 trending terms in the US for each day in 2020. Because Google Trends only supports comparing relative search interest of 5 terms at a time, many comparisons had to be made to determine which of the terms from this large list were the 5 most popular on any given day.
 
-1.	Compile a large list of all the search terms and topics that trended in 2020. To do this, I used Google’s 2020 Year in Search summary and the Wayback Machine to view Google’s Daily Trending Searches throughout 2020. This step was performed manually.
-2.	Input this compiled list into a script that calculates and outputs the top 5 trending terms in the US for each day in 2020. The script uses the google-trends-api and a system of repeatedly comparing the relative search interest of 4 terms to a benchmark term in order to determine the top trending terms.
-3.	Input this list of each day’s top 5 trending US searches into a second script that calculates their relative search interest across all the states, again using the google-trends-api.
-4.	Display results with the AnyChart US map.
+### 3.	Calculate which of these 5 terms was the most popular for each state
+The top 5 trending search terms in the US for each day was fed into a second script that would calculate their relative search interest in each state. This second script would then output the top trending term in each state for each day in 2020.
 
+### 4.	Format data for visualization
+The final step was to format the trend data properly to be fed into the AnyCharts mapping library.
 
 ## Future Features:
 - Automate ongoing data gathering so the map stays up to date with latest trends
