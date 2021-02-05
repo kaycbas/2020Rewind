@@ -167,6 +167,7 @@ var addEventListeners = function addEventListeners(allData, dataSet) {
   var playing = false;
   monthDayLabel.innerText = getMonthDayStr(date);
   yearLabel.innerText = date.getFullYear();
+  infoModal.style.display = "block";
   infoButton.addEventListener('click', function () {
     if (infoModal.style.display === "block") {
       infoModal.style.display = "none";

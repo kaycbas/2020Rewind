@@ -124,6 +124,7 @@ const addEventListeners = (allData, dataSet) => {
   monthDayLabel.innerText = getMonthDayStr(date);
   yearLabel.innerText = date.getFullYear();
 
+  infoModal.style.display = "block";
   infoButton.addEventListener('click', () => {
     if (infoModal.style.display === "block") {
       infoModal.style.display = "none";
