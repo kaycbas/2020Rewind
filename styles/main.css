@@ -88,7 +88,7 @@ body {
     padding: 30px;
 }
 
-.modal-content a {
+.sources a {
     color: #F7B926;
 }
 
@@ -313,7 +313,30 @@ body {
     display: inline;
 }
 
+/* Social Links */
+
+.fa-github {
+    padding: 0px 5px 14px 5px;
+    color: white;
+}
+.fa-linkedin {
+    padding: 0px 5px 14px 5px;
+    color: white;
+}
+.fa-github:hover {
+    color: #F7B926;
+}
+.fa-linkedin:hover {
+    color: #F7B926;
+}
+
+.footer-icons {
+    text-decoration: none;
+}
+
+
 /* Responsive */
+
 
 @media only screen and (min-width: 2600px) {
     .map-section {
