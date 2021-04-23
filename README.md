@@ -32,4 +32,4 @@ The top 5 trending search terms in the US for each day was fed into a second scr
 The final step was to format the trend data properly to be fed into the AnyCharts mapping library.
 
 ## Future Features:
-- Automate ongoing data gathering so the map stays up to date with latest trends
+- Automate ongoing data gathering so the map stays up to date with latest trends.
